@@ -19,7 +19,7 @@ body{
 #header{
 	text-align: center;
 }
-#input1, #input2, #input3{
+.form-inline{
 	margin-bottom: 5px;
 }
 #main{

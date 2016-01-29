@@ -1,23 +1,24 @@
 $(function() {
-// When clicked, do this
+// When clicked, generate user's inputs and starts randomizing
 ///////////////////////////////////////////////////////////////////////////////////////
 $('#submit').on("click", function(){
 	var counts = $('input.count').length;
-	var markers = []
+	var markers = [];
+	console.log($('#input1').val());
 	for(x = 0; x < counts; x++){
 		markers[x+1] = $('#input'+[x+1]).val();
-		if(markers[0] == ''){
-			$('#inputs').append("Need atleast two inputs");
-		}else{
-			show()
-			
-		}
-	}
+	};
+	if($('#input1').val() == '' || $('#input2').val() == ''){
+		$('#inputs').append("<p style='color:red;'>Need atleast two inputs<p><br>");
+	}else{
+		show();
+	};
 	
 });
 ///////////////////////////////////////////////////////////////////////////////////////
 
-// For loading
+
+// For loading gif
 ///////////////////////////////////////////////////////////////////////////////////////
 var loading = $('.loading');
 var show = function(){
@@ -37,7 +38,8 @@ var showTwo = function(){
 }
 ///////////////////////////////////////////////////////////////////////////////////////
 
-// Generating random
+
+// Generating random from user's inputs
 ///////////////////////////////////////////////////////////////////////////////////////
 var arrayList = [];
 var arrayText = ['Woohoo!! It is ', 'Lucky pick goes to... ', 'Fate has decided on '];
@@ -63,7 +65,7 @@ function success(){
 var i = 2;
 $('#newEntry').on("click", function(){
 	i++;
-	$('#moreInput').append("<label for='input"+i+"'>"+i+"</label><input type='text' name='input"+i+"' id='input"+i+"' class='count'><br>");
+	$('#moreInput').append("<div class='form-inline'><label for='input"+i+"'>"+i+"</label><input type='text' name='input"+i+"' id='input"+i+"' class='form-control count'></div>");
 });
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -85,17 +87,10 @@ function randomize(){
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
-
-// Update year on footer
+// Auto update year on copyright footer
 ///////////////////////////////////////////////////////////////////////////////////////
 var d = new Date();
 var n = d.getFullYear();
 $('#footer').append("Copyright "+n+" | Random Generator Matt Yeung")
 ///////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 });

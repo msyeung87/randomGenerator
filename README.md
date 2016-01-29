@@ -1,0 +1,1 @@
+A random generator with custom inputs and array of foods if you can't decide on what to eat.
