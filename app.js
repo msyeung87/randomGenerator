@@ -54,7 +54,7 @@ function success(){
 	var chosenOne = Math.floor(Math.random() * arrayList.length);
 	var chosenText = Math.floor(Math.random() * arrayText.length);
 	var refresh = "<br><input type='button' class='btn btn-danger' onClick='history.go(0)' value='Reset'>";
-	$('#main').html('<p class="chosenOne">'+ arrayText[chosenText] + arrayList[chosenOne] + '!!</p>');
+	$('#main').html('<p class="chosenOne animated bounce">'+ arrayText[chosenText] + arrayList[chosenOne] + '!!</p>');
 	$('#main').append(refresh);
 };
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +65,7 @@ function success(){
 var i = 2;
 $('#newEntry').on("click", function(){
 	i++;
-	$('#moreInput').append("<div class='form-inline'><label for='input"+i+"'>"+i+"</label><input type='text' name='input"+i+"' id='input"+i+"' class='form-control count'></div>");
+	$('#moreInput').append("<div class='form-inline animated slideInRight'><label for='input"+i+"'>"+i+"</label><input type='text' name='input"+i+"' id='input"+i+"' class='form-control count'></div>");
 });
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -81,7 +81,7 @@ function randomize(){
 	$('#main').css("display", "block");
 	var chosenFood = Math.floor(Math.random() * arrayFood.length);
 	var refresh = "<br><input type='button' class='btn btn-danger' onClick='history.go(0)' value='Reset'>";
-	$('#main').html('<p class="chosenOne">'+ arrayFood[chosenFood]+'!!</p>');
+	$('#main').html('<p class="chosenOne animated zoomIn">'+ arrayFood[chosenFood]+'!!</p>');
 	$('#main').append(refresh);
 };
 ///////////////////////////////////////////////////////////////////////////////////////
